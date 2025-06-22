@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Results - ThinkStorm</title>
+  <link rel="stylesheet" href="results.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg p-3" style="background-color: #6a11cb;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a href="../index.html" class="navbar-brand d-flex align-items-center">
+        <img src="../media/image.png" alt="ThinkStorm Logo" style="width: 40px; margin-right: 10px;" />
+        <span class="fw-bold text-white">ThinkStorm</span>
+      </a>
+      <button onclick="toggleMode()" class="btn btn-outline-light" aria-label="Toggle dark mode">🌞 / 🌙</button>
+      <ul class="navbar-nav d-flex flex-row gap-3">
+        <li class="nav-item"><a class="nav-link text-white" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="../Game/quiz.html">Play Again</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="../Profile/profile.html">Profile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="results-container">
+    <div class="results-header">
+      <h1><i class="fas fa-poll"></i> Quiz Results</h1>
+      <div class="score-circle">
+        <div class="circle-progress" id="circleProgress">
+          <span id="percentageDisplay">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-details">
+      <div class="detail-card">
+        <i class="fas fa-user"></i>
+        <div>
+          <p class="detail-label">Player</p>
+          <p class="detail-value" id="currentUser">Guest</p>
+        </div>
+      </div>
+      
+      <div class="detail-card">
+        <i class="fas fa-star"></i>
+        <div>
+          <p class="detail-label">Score</p>
+          <p class="detail-value"><span id="score">0</span> / <span id="total">10</span></p>
+        </div>
+      </div>
+      
+      <div class="detail-card">
+        <i class="fas fa-clock"></i>
+        <div>
+          <p class="detail-label">Date</p>
+          <p class="detail-value" id="resultDate">Today</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-container" id="feedbackContainer">
+      <p id="feedback">Calculating your results...</p>
+    </div>
+
+    <div class="btn-group">
+      <button onclick="location.href='../Game/quiz.html'" class="btn-primary">
+        <i class="fas fa-redo"></i> Try Again
+      </button>
+      <button onclick="location.href='../Review/review.html'" class="btn-secondary">
+        <i class="fas fa-search"></i> Review Answers
+      </button>
+      <button onclick="location.href='../Leaderboard/leaderboard.html'" class="btn-tertiary">
+        <i class="fas fa-trophy"></i> Leaderboard
+      </button>
+    </div>
+  </main>
+
+  <footer class="text-center text-white py-3" style="background-color: #6a11cb;">
+    <p class="mb-0">&copy; 2025 ThinkStorm. All rights reserved.</p>
+  </footer>
+
+
+  <audio id="winSound" src="../media/win.wav" preload="auto"></audio>
+  <audio id="clickSound" src="../media/click.wav" preload="auto"></audio>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="results.js"></script>
+</body>
+</html>

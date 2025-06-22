@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Quiz Me</title>
+  <link rel="stylesheet" href="signup.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a href="../index.html" class="navbar-brand">
+        <img src="../media/image.png" alt="Quiz Me Logo" />
+        Quiz Me
+      </a>
+      <div class="d-flex">
+        <ul class="navbar-nav flex-row gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../signin/signin.html">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <header>
+      <h1>Create an Account</h1>
+      <h3>Join our quiz community today</h3>
+    </header>
+
+    <div class="cont">
+      <form id="signupForm">
+        <div class="mb-3">
+          <label for="signupName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="signupName" required placeholder="Enter your full name">
+        </div>
+
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="signupEmail" required placeholder="Enter your email">
+        </div>
+
+        <div class="mb-3">
+          <label for="signupPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="signupPassword" required placeholder="Create a password">
+        </div>
+
+        <div class="mb-3">
+          <label for="signupDob" class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" id="signupDob">
+        </div>
+
+        <button type="submit" class="button">Sign Up</button>
+        <div id="signupSuccess">
+          ✅ Account created successfully! Redirecting...
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <p>Already have an account? <a href="../signin/signin.html">Sign in here</a></p>
+    </footer>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
